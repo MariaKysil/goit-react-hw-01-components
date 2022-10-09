@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import {
-  Wrapper,
-  Description,
   Avatar,
   Name,
   Tag,
@@ -10,6 +8,7 @@ import {
   Label,
   Quantity,
 } from './Profile.styled';
+import { Box } from 'components/Box';
 
 export const Profile = ({
   username,
@@ -19,29 +18,39 @@ export const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <Wrapper>
-      <Description>
+    <Box
+      width="20%"
+      mt={5}
+      mb={5}
+      ml={9}
+      mr={9}
+      pt={5}
+      textAlign="center"
+      boxShadow="boxShadow"
+      borderRadius="normal"
+    >
+      <Box mb={5} pl={4} pr={4}>
         <Avatar src={avatar} alt="User avatar" width="60" />
         <Name>{username}</Name>
         <Tag>@{tag}</Tag>
         <Location>{location}</Location>
-      </Description>
+      </Box>
 
-      <Stats class="stats">
+      <Stats>
         <li>
-          <Label class="label">Followers</Label>
-          <Quantity class="quantity">{followers}</Quantity>
+          <Label>Followers</Label>
+          <Quantity>{followers}</Quantity>
         </li>
         <li>
-          <Label class="label">Views</Label>
-          <Quantity class="quantity">{views}</Quantity>
+          <Label>Views</Label>
+          <Quantity>{views}</Quantity>
         </li>
         <li>
-          <Label class="label">Likes</Label>
-          <Quantity class="quantity">{likes}</Quantity>
+          <Label>Likes</Label>
+          <Quantity>{likes}</Quantity>
         </li>
       </Stats>
-    </Wrapper>
+    </Box>
   );
 };
 
