@@ -4,7 +4,6 @@ import {
   TableThead,
   TableWrapper,
 } from './TransactionHistory.styled';
-import { Box } from 'components/Box';
 
 export const TransactionHistory = ({ items }) => {
   return (
